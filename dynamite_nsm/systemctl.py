@@ -295,6 +295,6 @@ class SystemCtl:
         res = self.disable(svc)
         try:
             os.remove(os.path.join(self.UNIT_FILE_DIR, svc))
-        except FileNotFoundError:
+        except IOError:
             return True
         return res
