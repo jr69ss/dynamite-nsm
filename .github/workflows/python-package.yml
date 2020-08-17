@@ -25,9 +25,11 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        sudo python -m pip install --upgrade pip
-        sudo pip install flake8 pytest
-        sudo pip install .
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        pip install .
     - name: Install ElasticSearch
       run: |
-        sudo python scripts/dynamite elasticsearch install
+        whoami
+        python --version
+        dynamite version
